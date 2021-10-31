@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Detail {% endblock title %}
+
+{% block main %}
+
+<div class="m-4">
+    <div class="card mb-3">
+        <img class="card-img-top" src="{{get_detail.image.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{get_detail.title}}</h5>
+            <p class="card-text">{{get_detail.description}}</p>
+            <p class="card-text"><small class="text-muted">{{get_detail.timestamp}}</small></p>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock main %}

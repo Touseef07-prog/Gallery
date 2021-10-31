@@ -8,11 +8,17 @@ from .models import Category, Picture
 def home(request):
     get_categories = Category.objects.all().order_by("-timestamp")
     get_pictures = Picture.objects.all().order_by("-timestamp")
-    return render(
-        request,
-        "app_1/home.html",
-        {"pictures": get_pictures, "categories": get_categories},
-    )
+    return render( request, "app_1/home.html",{"pictures": get_pictures, "categories": get_categories})
+
+def picture_detail(request,id):
+    get_detail=Picture.objects.get(id=id)
+    return render(request,
+    "app_1/picture_detail.html",
+    {"get_detail":get_detail})
+
+
+    
+    
 
 
 def picture_upload(request):
